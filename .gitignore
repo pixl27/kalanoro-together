@@ -1,0 +1,9 @@
+# Only the mods, the installer, the build script and the docs are published.
+/*
+!/.gitignore
+!/README.md
+!/LICENSE
+!/build_dist.sh
+!/src/
+!/dist-src/
+logs/
