@@ -1,7 +1,7 @@
 # Kalanoro Together
 
-Online co-op for the **Kalanoro** demo (UE 5.6): one player hosts their game, the others join and play the demo
-together in the host's world. Comes with **Kalanoro Fix**, the graphics options and bug fixes the demo is missing.
+Online co-op mod for **Kalanoro** (UE 5.6): one player hosts their game, the others join and play together in the
+host's world. Comes with **Kalanoro Fix**, the graphics options and bug fixes the game is missing.
 Unofficial fan mod, built on [UE4SS](https://github.com/UE4SS-RE/RE-UE4SS).
 
 **Version 0.1 alpha** — expect bugs. Please report them in [Issues](https://github.com/pixl27/kalanoro-together/issues).
@@ -10,7 +10,7 @@ Unofficial fan mod, built on [UE4SS](https://github.com/UE4SS-RE/RE-UE4SS).
 
 ## Install (every player)
 
-Requirements: Windows 10/11 and the Kalanoro demo. All players need the same game build and the same mod version.
+Requirements: Windows 10/11 and Kalanoro. All players need the same game build and the same mod version.
 
 1. Download `KalanoroTogether-v0.1-alpha.zip` from the [releases page](https://github.com/pixl27/kalanoro-together/releases/latest).
 2. Close the game, then unzip it anywhere inside the game folder (the folder that contains `Kalanoro.exe`).
