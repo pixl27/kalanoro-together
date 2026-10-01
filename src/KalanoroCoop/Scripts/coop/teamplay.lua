@@ -28,7 +28,7 @@ local BLEED_OUT_SECONDS = 60
 local REVIVE_HP_FRACTION = 0.5
 local TAG_SIZE = 24            -- name tag text height (cm) at your own distance from the camera
 local TAG_SHADOW_OFFSET = 0.1  -- drop shadow offset, as a fraction of the text height
-local TAG_HEIGHT = 75          -- name tag anchor above the character's centre (cm)
+local TAG_HEIGHT = 125         -- name tag anchor above the character's centre (cm): clear of the hair (capsule top: 88)
 local TAG_MAX_SCALE = 10
 local TAG_DISTANCE_FROM = 2500 -- teammates at least this far get their distance on the tag
 
