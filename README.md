@@ -23,6 +23,19 @@ Requirements: Windows 10/11 and Kalanoro. All players need the same game build a
    your character, default your Windows user name; keys) and graphics options in
    `Kalanoro\Binaries\Win64\ue4ss\Mods\KalanoroFix\config.ini`.
 
+### Playing online (not on the same network)
+
+On the same home network (same router / Wi-Fi) nothing else is needed. To play with friends who are somewhere
+else, you need a virtual LAN: everyone installs **[Hamachi](https://vpn.net)** (free; Radmin VPN, ZeroTier or
+Tailscale work too) and joins the same network. When the host presses F5, the mod copies their Hamachi IP
+(25.x.x.x) to the clipboard: they send it to the others, who copy it and press F6.
+
+Windows treats the Hamachi network as a *public* network: the host should run the installer as administrator
+(it adds the firewall rule), or tick both **Private** and **Public** networks when the Windows Firewall prompt
+appears the first time they host.
+
+Without a virtual LAN, the host has to forward UDP port 7777 on their router and share their public IP.
+
 The installer adds UE4SS (the mod loader) if the game doesn't have it yet, installs both mods and keeps your
 `config.ini` files when you update. It also disables the game's Steam API (`steam_api64.dll` is renamed):
 Unreal's Steam socket layer otherwise blocks direct connections. `Uninstall-KalanoroCoop.ps1` restores it and
@@ -43,9 +56,8 @@ Console (F10 or `~`): `coop host`, `coop join <ip[:port]>`, `coop leave`, `coop 
 
 A client that loses the connection reconnects by itself (up to 6 tries). Sessions work with more than two players.
 
-**Playing over the internet:** the host must accept UDP port 7777. Either forward UDP 7777 on the host's
-router and join the host's public IP, or put everyone on the same virtual LAN (ZeroTier, Tailscale,
-Radmin VPN) and join the host's VPN IP.
+**Playing over the internet:** see [Playing online](#playing-online-not-on-the-same-network) (Hamachi or another
+virtual LAN).
 
 ### A friend can't join?
 
@@ -125,7 +137,11 @@ Bug fixes (each can be turned off in the config):
    aussi la règle du pare-feu). Chaque joueur fait la même chose.
 4. En jeu : **F5** héberger (ton IP est copiée, envoie-la à tes amis), **F6** rejoindre (copie l'IP de l'hôte
    avant), **F7** quitter, **F8** se téléporter près de son partenaire, **clic molette** pour pinger.
-   Par internet, l'hôte doit ouvrir le port UDP 7777, ou utilisez un VPN (ZeroTier, Tailscale, Radmin VPN).
+5. **En ligne, si vous n'êtes pas sur la même connexion** (même box / Wi-Fi) : installez tous
+   **[Hamachi](https://vpn.net)** (gratuit ; Radmin VPN, ZeroTier ou Tailscale marchent aussi) et rejoignez le même
+   réseau. Quand l'hôte appuie sur F5, le mod copie son IP Hamachi (25.x.x.x) : il l'envoie aux autres, qui la
+   copient et appuient sur F6. L'hôte doit lancer l'installateur en administrateur, ou cocher **Privé** et
+   **Public** quand le pare-feu Windows demande l'autorisation (Windows considère Hamachi comme un réseau public).
 
 ## Build from source
 

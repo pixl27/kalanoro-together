@@ -96,7 +96,8 @@ if ($isAdmin) {
     New-NetFirewallRule -DisplayName "Kalanoro Co-op" -Direction Inbound -Program $exe -Protocol UDP -LocalPort 7777 -Action Allow | Out-Null
     Write-Host "  Firewall rule added (UDP 7777)"
 } else {
-    Write-Host "  Not running as administrator: when Windows asks, allow Kalanoro on your network." -ForegroundColor Yellow
+    Write-Host "  Not running as administrator: when Windows asks, allow Kalanoro on private AND public networks" -ForegroundColor Yellow
+    Write-Host "  (Windows counts Hamachi as a public network)." -ForegroundColor Yellow
 }
 
 Write-Host ""
@@ -105,3 +106,5 @@ Write-Host "Done. Co-op settings: $modsDir\KalanoroCoop\config.ini (PlayerName, 
 Write-Host "Graphics and fixes:  $modsDir\KalanoroFix\config.ini (VSync, frame cap, HDR, TSR, performance mode)."
 Write-Host "In game: F5 host (your IP is copied to the clipboard), copy the host's IP then F6 to join, F7 leave,"
 Write-Host "F8 teleport to partner, middle mouse ping, F11 unstuck controls."
+Write-Host "Not on the same network as your friends? Everyone installs Hamachi (or Radmin VPN, ZeroTier) and joins the"
+Write-Host "same network; F5 then copies your Hamachi IP for them. See README.md."
